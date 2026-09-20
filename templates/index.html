@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolPulse // Real-Time Meme Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-mono min-h-screen selection:bg-emerald-500 selection:text-black">
+    <!-- Top Navigation Bar -->
+    <header class="border-b border-zinc-800 bg-zinc-900/50 backdrop-blur sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></div>
+            <h1 class="text-xl font-black tracking-widest text-white">SOL<span class="text-emerald-400">PULSE</span></h1>
+            <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700">v2.0 PRO</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div id="connection-badge" class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs border border-yellow-500/20 font-bold">
+                CONNECTING...
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto p-6">
+        <!-- Stats / Filter Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
+                <div class="text-xs text-zinc-500">Mints Tracked</div>
+                <div id="stat-total" class="text-2xl font-bold text-white mt-1">0</div>
+            </div>
+            <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
+                <div class="text-xs text-zinc-500">Passing Heuristics</div>
+                <div id="stat-passed" class="text-2xl font-bold text-emerald-400 mt-1">0</div>
+            </div>
+            <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
+                <div class="text-xs text-zinc-500">Stream Status</div>
+                <div class="text-2xl font-bold text-blue-400 mt-1">Active WS</div>
+            </div>
+            <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
+                <div class="text-xs text-zinc-500">Execution Mode</div>
+                <div class="text-2xl font-bold text-purple-400 mt-1">Simulation</div>
+            </div>
+        </div>
+
+        <!-- Token Feed Table Container -->
+        <div class="bg-zinc-900/40 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl">
+            <div class="p-4 border-b border-zinc-800 bg-zinc-900/80 flex justify-between items-center">
+                <h2 class="text-sm font-bold tracking-wider text-zinc-300 uppercase">Live Bonding Curve Stream</h2>
+                <span class="text-xs text-zinc-500">Auto-updating in real-time</span>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-zinc-800 text-zinc-500 text-xs uppercase bg-zinc-950/50">
+                            <th class="p-4">Token / Symbol</th>
+                            <th class="p-4">Mint Address</th>
+                            <th class="p-4">Evaluation</th>
+                            <th class="p-4 text-right">Action / Quick Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feed-table" class="divide-y divide-zinc-800/50 text-sm">
+                        <!-- Dynamic rows injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
